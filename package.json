@@ -1,0 +1,27 @@
+{
+  "name": "cp353-beer-scarching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel --presets es2015 js/main.js -o build/main.bundle.js",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirawitTH/cp353-beer-scarching.git"
+  },
+  "author": "Sirawit Tharana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirawitTH/cp353-beer-scarching/issues"
+  },
+  "homepage": "https://github.com/sirawitTH/cp353-beer-scarching#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "http-server": "^0.10.0"
+  }
+}
