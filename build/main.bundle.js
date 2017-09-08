@@ -57,7 +57,7 @@ var showDetail = function showDetail(id) {
             }
         }
 
-        document.getElementById('beer-content').innerHTML = '\n        <div class="text-center">\n            <img src="' + beer.image_url + '" style="max-height: 150px;">\n        </div>\n        <p style="text-indent: 50px;">' + beer.description + '</p>\n        <p><b>Tagline</b>: ' + beer.tagline + '</p>\n        <p><b>First Brewed</b>: ' + beer.first_brewed + '</p>\n        <p><b>Yeast</b>: ' + beer.ingredients.yeast + '</p>\n        <p><b>Food Pairing</b>:</p>\n        <ul>' + foodList + '</ul>\n        <p><b>Brewers Tips</b>: <span style="text-indent: 50px;">' + beer.brewers_tips + '</span></p>\n        ';
+        document.getElementById('beer-content').innerHTML = '\n        <div class="text-center">\n            <img src="' + beer.image_url + '" style="max-height: 150px;">\n        </div>\n        <p style="text-indent: 50px;">' + beer.description + '</p>\n        <p><b>Tagline</b>: ' + beer.tagline + '</p>\n        <p><b>First Brewed</b>: ' + beer.first_brewed + '</p>\n        <p><b>Yeast</b>: ' + beer.ingredients.yeast + '</p>\n        <p><b>Food Pairing</b>:</p>\n        <ul>' + foodList + '</ul>\n        <p><b>Brewers Tips</b>: ' + beer.brewers_tips + '</p>\n        ';
     });
 };
 

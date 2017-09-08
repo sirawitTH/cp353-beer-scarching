@@ -46,7 +46,7 @@ const showDetail = (id) => {
         <p><b>Yeast</b>: ${beer.ingredients.yeast}</p>
         <p><b>Food Pairing</b>:</p>
         <ul>${foodList}</ul>
-        <p><b>Brewers Tips</b>: <span style="text-indent: 50px;">${beer.brewers_tips}</span></p>
+        <p><b>Brewers Tips</b>: ${beer.brewers_tips}</p>
         `
     })
 }
