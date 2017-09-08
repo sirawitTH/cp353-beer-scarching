@@ -102,9 +102,7 @@ var search = function search() {
         if (inputBrewedDate) {
             var param = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate);
             if (!param) {
-                getAll().then(function (beers) {
-                    return showResult(beers);
-                });
+                showResult([]);
                 return;
             }
             if (selectedBrewed === 'be') {
@@ -117,20 +115,19 @@ var search = function search() {
                 });
             }
         } else {
-            getAll().then(function (beers) {
-                return showResult(beers);
-            });
+            showResult([]);
             return;
         }
     } else {
         var _param = '';
         if (inputBrewedDate) {
             var paramDate = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate);
-            if (paramDate) {
+            if (paramDate && paramDate == inputBrewedDate) {
                 var select = selectedBrewed === 'be' ? 'brewed_before=' : 'brewed_after=';
                 _param = inputText.trim().split(' ').join('_').concat('&' + select + '=' + paramDate[0]);
             } else {
-                _param = inputText.trim().split(' ').join('_');
+                showResult([]);
+                return;
             }
         } else {
             _param = inputText.trim().split(' ').join('_');
