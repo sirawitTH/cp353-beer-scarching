@@ -56,7 +56,7 @@ const showResult = (beers) => {
     for (let beer of beers) {
         cards += card(beer)
     }
-    document.getElementById(`show-result`).innerHTML = cards
+    document.getElementById(`show-result`).innerHTML = cards ? cards : 'No result'
 }
 
 const search = () => {

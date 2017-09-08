@@ -88,7 +88,7 @@ var showResult = function showResult(beers) {
         }
     }
 
-    document.getElementById('show-result').innerHTML = cards;
+    document.getElementById('show-result').innerHTML = cards ? cards : 'No result';
 };
 
 var search = function search() {
