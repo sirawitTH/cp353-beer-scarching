@@ -68,15 +68,15 @@ const search = () => {
     inputBrewedDate = document.getElementById(`input-brewed-date`).value
     if (!inputText) {
         if (inputBrewedDate) {
-            const param = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)[0]
+            const param = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)
             if (!param) {
                 getAll().then(beers => showResult(beers))
                 return
             }
             if (selectedBrewed === 'be') {
-                getByParam(`brewed_before=${param}`).then(beers => showResult(beers))
+                getByParam(`brewed_before=${param[0]}`).then(beers => showResult(beers))
             } else {
-                getByParam(`brewed_after=${param}`).then(beers => showResult(beers))
+                getByParam(`brewed_after=${param[0]}`).then(beers => showResult(beers))
             }
         } else {
             getAll().then(beers => showResult(beers))
@@ -85,10 +85,10 @@ const search = () => {
     } else {
         let param = ''
         if (inputBrewedDate) {
-            const paramDate = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)[0]
+            const paramDate = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)
             if (paramDate) {
                 const select = selectedBrewed === 'be' ? 'brewed_before=' : 'brewed_after='
-                param = inputText.trim().split(' ').join('_').concat(`&${select}=${paramDate}`)
+                param = inputText.trim().split(' ').join('_').concat(`&${select}=${paramDate[0]}`)
             } else {
                 param = inputText.trim().split(' ').join('_')
             }

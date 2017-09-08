@@ -100,7 +100,7 @@ var search = function search() {
     inputBrewedDate = document.getElementById('input-brewed-date').value;
     if (!inputText) {
         if (inputBrewedDate) {
-            var param = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)[0];
+            var param = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate);
             if (!param) {
                 getAll().then(function (beers) {
                     return showResult(beers);
@@ -108,11 +108,11 @@ var search = function search() {
                 return;
             }
             if (selectedBrewed === 'be') {
-                getByParam('brewed_before=' + param).then(function (beers) {
+                getByParam('brewed_before=' + param[0]).then(function (beers) {
                     return showResult(beers);
                 });
             } else {
-                getByParam('brewed_after=' + param).then(function (beers) {
+                getByParam('brewed_after=' + param[0]).then(function (beers) {
                     return showResult(beers);
                 });
             }
@@ -125,10 +125,10 @@ var search = function search() {
     } else {
         var _param = '';
         if (inputBrewedDate) {
-            var paramDate = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)[0];
+            var paramDate = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate);
             if (paramDate) {
                 var select = selectedBrewed === 'be' ? 'brewed_before=' : 'brewed_after=';
-                _param = inputText.trim().split(' ').join('_').concat('&' + select + '=' + paramDate);
+                _param = inputText.trim().split(' ').join('_').concat('&' + select + '=' + paramDate[0]);
             } else {
                 _param = inputText.trim().split(' ').join('_');
             }
