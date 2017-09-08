@@ -1,0 +1,11 @@
+body {
+    background-color: #E8E288;
+}
+.bg-nav {
+    background-color: #FF8360;
+}
+.search-box {
+    padding: 30px;
+    border-radius: 25px;
+    background-color: whitesmoke;
+}
