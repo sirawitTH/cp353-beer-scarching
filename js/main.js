@@ -78,6 +78,9 @@ const search = () => {
             } else {
                 getByParam(`brewed_after=${param}`).then(beers => showResult(beers))
             }
+        } else {
+            getAll().then(beers => showResult(beers))
+            return
         }
     } else {
         let param = ''
