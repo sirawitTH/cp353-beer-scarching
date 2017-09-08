@@ -1,5 +1,5 @@
 {
-  "name": "cp353-beer-scarching",
+  "name": "cp353-beer-searching",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sirawitTH/cp353-beer-scarching.git"
+    "url": "git+https://github.com/sirawitTH/cp353-beer-searching.git"
   },
   "author": "Sirawit Tharana",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sirawitTH/cp353-beer-scarching/issues"
+    "url": "https://github.com/sirawitTH/cp353-beer-searching/issues"
   },
-  "homepage": "https://github.com/sirawitTH/cp353-beer-scarching#readme",
+  "homepage": "https://github.com/sirawitTH/cp353-beer-searching#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
