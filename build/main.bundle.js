@@ -116,19 +116,22 @@ var search = function search() {
                     return showResult(beers);
                 });
             }
+        } else {
+            getAll().then(function (beers) {
+                return showResult(beers);
+            });
+            return;
         }
     } else {
         var _param = '';
         if (inputBrewedDate) {
             var paramDate = /[0-9]{2}-[0-9]{4}/g.exec(inputBrewedDate)[0];
-            if (!paramDate) {
-                getAll().then(function (beers) {
-                    return showResult(beers);
-                });
-                return;
+            if (paramDate) {
+                var select = selectedBrewed === 'be' ? 'brewed_before=' : 'brewed_after=';
+                _param = inputText.trim().split(' ').join('_').concat('&' + select + '=' + paramDate);
+            } else {
+                _param = inputText.trim().split(' ').join('_');
             }
-            var select = selectedBrewed === 'be' ? 'brewed_before=' : 'brewed_after=';
-            _param = inputText.trim().split(' ').join('_').concat('&' + select + '=' + paramDate);
         } else {
             _param = inputText.trim().split(' ').join('_');
         }
